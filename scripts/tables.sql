@@ -30,7 +30,7 @@ CONSTRAINT "PK_departments" PRIMARY KEY ("dept_no")
 
 CREATE TABLE "dept_emp" ( 
   "emp_no"                      INTEGER NOT NULL,
-  "dept_no"                     VARCHAR(4) NOT NULL,
+  "dept_no"                     VARCHAR(10) NOT NULL,
   "from_date"                   TIMESTAMP NOT NULL,
   "to_date"                     TIMESTAMP NOT NULL
 ) 
