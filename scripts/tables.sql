@@ -1,4 +1,3 @@
-
 /*============================================================================*/
 /* DBMS: PostgreSQL 11*/
 /* Created on : 07/20/2019 21:13:58                                           */
@@ -28,6 +27,17 @@ CONSTRAINT "PK_departments" PRIMARY KEY ("dept_no")
 ) 
 ;
 
+CREATE TABLE "employees" ( 
+  "emp_no"                      INTEGER NOT NULL,
+  "birth_date"                  TIMESTAMP NOT NULL,
+  "first_name"                  VARCHAR(100) NOT NULL,
+  "last_name"                   VARCHAR(100) NOT NULL,
+  "gender"                      CHARACTER(1) NOT NULL,
+  "hire_date"                   TIMESTAMP NOT NULL,
+CONSTRAINT "PK_employees" PRIMARY KEY ("emp_no")
+) 
+;
+
 CREATE TABLE "dept_emp" ( 
   "emp_no"                      INTEGER NOT NULL,
   "dept_no"                     VARCHAR(10) NOT NULL,
@@ -44,17 +54,6 @@ CREATE TABLE "dept_manager" (
 ) 
 ;
 
-CREATE TABLE "employees" ( 
-  "emp_no"                      INTEGER NOT NULL,
-  "birth_date"                  TIMESTAMP NOT NULL,
-  "first_name"                  VARCHAR(100) NOT NULL,
-  "last_name"                   VARCHAR(100) NOT NULL,
-  "gender"                      CHARACTER(1) NOT NULL,
-  "hire_date"                   TIMESTAMP NOT NULL,
-CONSTRAINT "PK_employees" PRIMARY KEY ("emp_no")
-) 
-;
-
 CREATE TABLE "salaries" ( 
   "emp_no"                      INTEGER NOT NULL,
   "salary"                      NUMERIC NOT NULL,
@@ -65,14 +64,21 @@ CREATE TABLE "salaries" (
 
 
 /*==============================================================*/
-/* FOREIGN KEY CONSTRAINT                                       */
+/* FOREIGN KEY CONSTRAINTS                                       */
 /*==============================================================*/
 ALTER TABLE "dept_manager"
     ADD CONSTRAINT "FK_dept_manager__REF__departments" FOREIGN KEY ("dept_no")
-        REFERENCES "departments" ("dept_no")
+        REFERENCES "departments" ("dept_no")	
 ON DELETE RESTRICT
 ON UPDATE RESTRICT
  ;
+ 
+ ALTER TABLE "dept_manager"
+    ADD CONSTRAINT "FK_dept_manager__REF__employees" FOREIGN KEY ("emp_no")
+        REFERENCES "employees" ("emp_no")
+ON DELETE RESTRICT
+ON UPDATE RESTRICT
+ ;       
  
 ALTER TABLE "dept_emp"
     ADD CONSTRAINT "FK_dept_emp__REF__departments" FOREIGN KEY ("dept_no")
@@ -87,13 +93,7 @@ ON UPDATE RESTRICT
 ON DELETE RESTRICT
 ON UPDATE RESTRICT
  ;   
- 
- ALTER TABLE "dept_manager"
-    ADD CONSTRAINT "FK_dept_manager__REF__employees" FOREIGN KEY ("emp_no")
-        REFERENCES "employees" ("emp_no")
-ON DELETE RESTRICT
-ON UPDATE RESTRICT
- ;                 
+            
          
 ALTER TABLE "salaries"
     ADD CONSTRAINT "FK_salaries__REF__employees" FOREIGN KEY ("emp_no")
