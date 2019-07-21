@@ -1,7 +1,5 @@
 -- Data Analysis
--- 
--- Once you have a complete database, do the following:
--- 
+--  
 -- 
 -- 1. List the following details of each employee: employee number, last name, first name, gender, and salary.
 SELECT 
@@ -59,18 +57,32 @@ FROM employees emp
 WHERE emp.first_name = 'Hercules' AND emp.last_name LIKE 'B%'
 ORDER BY emp.last_name;
 
-
 -- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+SELECT 
+	demp.emp_no,   
+	emp.last_name, 
+	emp.first_name,
+	dep.dept_name 
+FROM departments dep
+JOIN dept_emp  demp ON (dep.dept_no = demp.dept_no AND dep.dept_name = 'Sales')
+JOIN employees emp  ON (demp.emp_no  = emp.emp_no)
+ORDER BY emp.last_name,emp.first_name;
+
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+SELECT 
+	demp.emp_no,   
+	emp.last_name, 
+	emp.first_name,
+	dep.dept_name
+FROM departments dep
+JOIN dept_emp  demp ON (dep.dept_no = demp.dept_no AND dep.dept_name IN ('Sales','Development'))
+JOIN employees emp  ON (demp.emp_no  = emp.emp_no)
+ORDER BY emp.last_name,emp.first_name;
+
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
-
-
-
-select * from dept_emp;
-select * from  dept_manager;
-select * from  salaries;
-select * from  departments;
-select * from  employees;
-
-
+SELECT 
+	emp.last_name, 
+	COUNT(1) AS frequency_last_name
+FROM employees emp 
+GROUP BY emp.last_name DESC;
 
