@@ -103,10 +103,10 @@ ON UPDATE RESTRICT
  ;
          
 
-COPY departments FROM'C:\Users\pamcu\UofT\08_PHEmployeesResearchProject\PHEmployeesResearchProject\data\departments.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY employees FROM'C:\Users\pamcu\UofT\08_PHEmployeesResearchProject\PHEmployeesResearchProject\data\employees.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY salaries FROM'C:\Users\pamcu\UofT\08_PHEmployeesResearchProject\PHEmployeesResearchProject\data\salaries.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY dept_emp FROM'C:\Users\pamcu\UofT\08_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_emp.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY dept_manager FROM'C:\Users\pamcu\UofT\08_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_manager.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY departments FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\departments.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY employees FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\employees.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY salaries FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\salaries.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY dept_emp FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_emp.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY dept_manager FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_manager.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
 
-
+commit
