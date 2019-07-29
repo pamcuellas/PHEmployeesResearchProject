@@ -56,6 +56,12 @@ CREATE TABLE "salaries" (
   "to_date"                     TIMESTAMP NOT NULL
 );
 
+CREATE TABLE "titles" (
+    "emp_no" 					INTEGER NOT NULL,
+    "title" 					VARCHAR(100) NOT NULL,
+    "from_date" 				TIMESTAMP NOT NULL,
+    "to_date" 					TIMESTAMP NOT NULL
+);
 
 /*==============================================================*/
 /* FOREIGN KEY CONSTRAINTS                                       */
@@ -95,6 +101,13 @@ ALTER TABLE "salaries"
 ON DELETE RESTRICT
 ON UPDATE RESTRICT
  ;
+
+ALTER TABLE "titles" 
+	ADD CONSTRAINT "FK_titles__REF__employees" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no")
+ON DELETE RESTRICT
+ON UPDATE RESTRICT
+ ;
          
 
 COPY departments FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\departments.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
@@ -102,5 +115,6 @@ COPY employees FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployee
 COPY salaries FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\salaries.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
 COPY dept_emp FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_emp.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
 COPY dept_manager FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_manager.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY titles FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\titles.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
 
-commit
+
