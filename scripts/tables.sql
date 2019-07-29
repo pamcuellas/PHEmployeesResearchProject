@@ -19,13 +19,11 @@ DROP TABLE IF EXISTS employees;
 
 
 
-
 CREATE TABLE "departments" ( 
   "dept_no"                     VARCHAR(10) NOT NULL,
   "dept_name"                   VARCHAR(100) NOT NULL,
 CONSTRAINT "PK_departments" PRIMARY KEY ("dept_no")
-) 
-;
+);
 
 CREATE TABLE "employees" ( 
   "emp_no"                      INTEGER NOT NULL,
@@ -35,32 +33,28 @@ CREATE TABLE "employees" (
   "gender"                      CHARACTER(1) NOT NULL,
   "hire_date"                   TIMESTAMP NOT NULL,
 CONSTRAINT "PK_employees" PRIMARY KEY ("emp_no")
-) 
-;
+);
 
 CREATE TABLE "dept_emp" ( 
   "emp_no"                      INTEGER NOT NULL,
   "dept_no"                     VARCHAR(10) NOT NULL,
   "from_date"                   TIMESTAMP NOT NULL,
   "to_date"                     TIMESTAMP NOT NULL
-) 
-;
+);
 
 CREATE TABLE "dept_manager" ( 
   "dept_no"                     VARCHAR(10) NOT NULL,
   "emp_no"                      INTEGER NOT NULL,
   "from_date"                   TIMESTAMP NOT NULL,
   "to_date"                     TIMESTAMP NOT NULL
-) 
-;
+);
 
 CREATE TABLE "salaries" ( 
   "emp_no"                      INTEGER NOT NULL,
   "salary"                      NUMERIC NOT NULL,
   "from_date"                   TIMESTAMP NOT NULL,
   "to_date"                     TIMESTAMP NOT NULL
-) 
-;
+);
 
 
 /*==============================================================*/
