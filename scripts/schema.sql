@@ -110,11 +110,15 @@ ON UPDATE RESTRICT
  ;
          
 
-COPY departments FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\departments.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY employees FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\employees.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY salaries FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\salaries.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY dept_emp FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_emp.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY dept_manager FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\dept_manager.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-COPY titles FROM'C:\Users\pamcu\UofT\07_PHEmployeesResearchProject\PHEmployeesResearchProject\data\titles.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
-
+/*==============================================================*/
+/* IMPORT FILES                                                 */
+/*==============================================================*/
+/*
+COPY departments FROM '<Type your data directory here>\departments.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY employees FROM '<Type your data directory here>\employees.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY salaries FROM '<Type your data directory here>\salaries.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY dept_emp FROM '<Type your data directory here>\dept_emp.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY dept_manager FROM '<Type your data directory here>\dept_manager.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+COPY titles FROM '<Type your data directory here>\titles.csv' DELIMITERS','  HEADER CSV NULL'' ENCODING'UTF8';
+*/
 
