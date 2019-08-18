@@ -10,7 +10,7 @@
 /*============================================================================*/
 
 
-
+DROP TABLE IF EXISTS titles;
 DROP TABLE IF EXISTS dept_emp;
 DROP TABLE IF EXISTS dept_manager;
 DROP TABLE IF EXISTS salaries;
